@@ -3,17 +3,25 @@ import theme from "../../theme";
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --red: ${theme.color.primary.red};
-    --green: ${theme.color.primary.green};
-    --blue: ${theme.color.accent.blue};
-    --dark-blue: ${theme.color.neutral.darkBlue};
-    --grayish-blue: ${theme.color.neutral.grayishBlue};
-    --fs-body: ${16 / 16 + "rem"};
-    --ff-poppins: ${theme.typography.font.family.poppins};
-    --fw-regular: ${theme.typography.font.weight.regular};
-    --fw-medium: ${theme.typography.font.weight.medium};
-    --fw-semi-bold: ${theme.typography.font.weight.semiBold};
-    --fw-bold: ${theme.typography.font.weight.bold};
+    --color-primary-red: ${theme.color.primary.red};
+    --color-primary-green: ${theme.color.primary.green};
+    --color-accent-blue: ${theme.color.accent.blue};
+    --color-neutral-dark-blue: ${theme.color.neutral.darkBlue};
+    --color-neutral-grayish-blue: ${theme.color.neutral.grayishBlue};
+    --color-neiutral-white: ${theme.color.neutral.white};
+    --font-size-body: ${theme.typography.font.size.body};
+    --font-size-small: ${theme.typography.font.size.small};
+    --font-size-h1: ${theme.typography.font.size.h1};
+    --font-size-h2: ${theme.typography.font.size.h2};
+    --font-size-h3: ${theme.typography.font.size.h3};
+    --font-size-h4: ${theme.typography.font.size.h4};
+    --font-size-h5: ${theme.typography.font.size.h5};
+    --font-family-poppins: ${theme.typography.font.family.poppins};
+    --font-weight-regular: ${theme.typography.font.weight.regular};
+    --font-weight-medium: ${theme.typography.font.weight.medium};
+    --font-weight-semi-bold: ${theme.typography.font.weight.semiBold};
+    --font-weight-bold: ${theme.typography.font.weight.bold};
+    --line-height-header: ${theme.typography.font.lineHeight.heading};
   }
   *, *::before, *::after {
     box-sizing: border-box;
@@ -42,33 +50,33 @@ const GlobalStyle = createGlobalStyle`
     isolation: isolate;
   }
   body {
-    font-size: var(--fs-body);
-    font-family: var(--ff-poppins);
+    font-size: var(--font-size-body);
+    font-family: var(--font-family-poppins);
   }
   h1, h2, h3, h4, h5 {
     margin: 3rem 0 1.38rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    line-height: 1.3;
+    font-family: var(--font-family-poppins);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-header);
   }
   h1 {
     margin-top: 0;
-    font-size: 4.209rem;
+    font-size: var(--font-size-h1);
   }
   h2 {
-    font-size: 3.157rem;
+    font-size: var(--font-size-h2);
   }
   h3 {
-    font-size: 2.369rem;
+    font-size: var(--font-size-h3);
   }
   h4 {
-    font-size: 1.777rem;
+    font-size: var(--font-size-h4);
   }
   h5 {
-    font-size: 1.333rem;
+    font-size: var(--font-size-h5);
   }
-  small, .text_small {
-    font-size: 0.75rem;
+  small {
+    font-size: var(--font-size-small);
   }
 `;
 
