@@ -1,4 +1,14 @@
+const boxShadowOffset = {
+  one: {
+    y: '8px',
+  },
+};
+
 const theme = {
+  shadow: {
+    one: `0px ${boxShadowOffset.one.y} 0px 0px rgba(0,0,0,0.5)`,
+    offset: { ...boxShadowOffset },
+  },
   color: {
     primary: {
       red: 'hsl(0, 100%, 74%)',
