@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import theme from "../../theme";
+import { createGlobalStyle } from 'styled-components';
+import theme from '../../theme';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
     --color-accent-blue: ${theme.color.accent.blue};
     --color-neutral-dark-blue: ${theme.color.neutral.darkBlue};
     --color-neutral-grayish-blue: ${theme.color.neutral.grayishBlue};
-    --color-neiutral-white: ${theme.color.neutral.white};
+    --color-neutral-white: ${theme.color.neutral.white};
     --font-size-body: ${theme.typography.font.size.body};
     --font-size-small: ${theme.typography.font.size.small};
     --font-size-h1: ${theme.typography.font.size.h1};
@@ -22,6 +22,8 @@ const GlobalStyle = createGlobalStyle`
     --font-weight-semi-bold: ${theme.typography.font.weight.semiBold};
     --font-weight-bold: ${theme.typography.font.weight.bold};
     --line-height-header: ${theme.typography.font.lineHeight.heading};
+    --box-shadow-offset-one-y: ${theme.shadow.offset.one.y};
+    --box-shadow-one: ${theme.shadow.one};
   }
   *, *::before, *::after {
     box-sizing: border-box;
