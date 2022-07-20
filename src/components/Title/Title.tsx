@@ -5,11 +5,12 @@ interface TitleProps {
   color?: string;
   level?: number;
   children?: React.ReactNode;
+  as?: React.ElementType;
 }
 
 const Title = ({ color, level, children, ...restProps }: TitleProps) => {
   return (
-    <Wrapper color={color} {...restProps}>
+    <Wrapper as={`h${level}`} color={color} {...restProps}>
       <>{children}</>
     </Wrapper>
   );
