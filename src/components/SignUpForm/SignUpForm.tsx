@@ -74,6 +74,7 @@ const SignUpForm = () => {
 };
 
 const Form = styled.form`
+  width: 100%;
   background: white;
   box-shadow: var(--box-shadow-one);
   padding: 24px;
@@ -101,6 +102,7 @@ const Disclaimer = styled.p`
   padding-right: 24px;
   color: var(--color-neutral-grayish-blue);
   font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-small);
   a {
     color: var(--color-primary-red);
     text-decoration: none;

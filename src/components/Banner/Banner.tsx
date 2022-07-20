@@ -10,6 +10,7 @@ const Banner = ({ children, ...args }: Props) => {
 };
 
 const Wrapper = styled.div`
+  width: 100%;
   background: var(--color-accent-blue);
   text-align: center;
   color: var(--color-neutral-white);

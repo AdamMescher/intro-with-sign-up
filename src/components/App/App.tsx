@@ -50,6 +50,14 @@ const Wrapper = styled.main`
   h1 {
     font-weight: var(--font-weight-semi-bold);
   }
+  @media (min-width: 900px) {
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+    flex-direction: row;
+    justify-content: center;
+    algin-items: center;
+    gap: 72px;
+  }
 `;
 const Bold = styled.span`
   font-weight: var(--font-weight-bold);
@@ -62,11 +70,27 @@ const Section = styled.section`
   padding-right: 24px;
   margin-left: auto;
   margin-right: auto;
+  @media (min-width: 900px) {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const Copy = styled(Section)`
   color: var(--color-neutral-white);
   text-align: center;
+  @media (min-width: 900px) {
+    padding: 0;
+    flex-direction: column;
+    text-align: left;
+  }
+  h1,
+  p {
+    max-width: 480px;
+    align-self: flex-end;
+  }
 `;
 
 const Form = styled(Section)`
