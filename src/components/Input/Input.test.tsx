@@ -7,10 +7,16 @@ expect.extend(toHaveNoViolations);
 
 describe('Input Component', () => {
   it('Should render without errors', () => {
-    render(<Input />);
+    const name = 'firstName';
+    const label = 'First Name';
+    const placeholder = 'First Name';
+    render(<Input label={label} name={name} placeholder={placeholder} />);
   });
   it('Should render without axe a11y errors', async () => {
-    render(<Input />);
+    const name = 'firstName';
+    const label = 'First Name';
+    const placeholder = 'First Name';
+    render(<Input label={label} name={name} placeholder={placeholder} />);
     expect(await axe(screen.getByRole('textbox'))).toHaveNoViolations();
   });
 });
