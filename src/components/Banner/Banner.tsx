@@ -5,6 +5,10 @@ interface Props {
   children: React.ReactNode;
 }
 
+const Banner = ({ children, ...args }: Props) => {
+  return <Wrapper {...args}>{children}</Wrapper>;
+};
+
 const Wrapper = styled.div`
   background: var(--color-accent-blue);
   text-align: center;
@@ -12,12 +16,9 @@ const Wrapper = styled.div`
   padding: 20px;
   border-radius: 8px;
   display: flex;
+  justify-content: center;
   box-shadow: var(--box-shadow-one);
   margin-bottom: var(--box-shadow-offset-one-y);
 `;
-
-const Banner = ({ children, ...args }: Props) => {
-  return <Wrapper {...args}>{children}</Wrapper>;
-};
 
 export default Banner;
