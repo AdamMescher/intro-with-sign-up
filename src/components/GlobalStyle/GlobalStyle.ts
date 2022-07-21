@@ -24,6 +24,9 @@ const GlobalStyle = createGlobalStyle`
     --line-height-header: ${theme.typography.font.lineHeight.heading};
     --box-shadow-offset-one-y: ${theme.shadow.offset.one.y};
     --box-shadow-one: ${theme.shadow.one};
+    --box-shadow-color-accent-blue: ${theme.shadow.color.accent.blue};
+    --box-shadow-color-primary-green: ${theme.shadow.color.primary.green};
+    --box-shadow-color-primary-red: ${theme.shadow.color.primary.red};
   }
   *, *::before, *::after {
     box-sizing: border-box;

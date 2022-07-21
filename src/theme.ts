@@ -8,6 +8,15 @@ const theme = {
   shadow: {
     one: `0px ${boxShadowOffset.one.y} 0px 0px rgba(0,0,0,0.5)`,
     offset: { ...boxShadowOffset },
+    color: {
+      accent: {
+        blue: 'hsla(248, 32%, 49%, 0.4)',
+      },
+      primary: {
+        green: 'hsla(154, 59%, 51%, 0.4)',
+        red: 'hsla(0, 100%, 74%, 0.4)',
+      },
+    },
   },
   color: {
     primary: {

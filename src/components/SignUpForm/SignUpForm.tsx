@@ -3,6 +3,12 @@ import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
 import Input from '../Input';
 import Button from '../Button';
+import {
+  firstNameValidaitionOptions,
+  lastNameValidationOptions,
+  emailValidationOptions,
+  passwordValidationOptions,
+} from './signUpFormValidationOptions';
 
 interface SignUpFormData {
   firstName: string;
@@ -25,7 +31,7 @@ const SignUpForm = () => {
     setValue('email', '');
     setValue('password', '');
   });
-
+  console.log({ signUpFormErrors: errors });
   return (
     <Form onSubmit={onSubmit}>
       <Input
@@ -33,9 +39,9 @@ const SignUpForm = () => {
         label='First Name'
         name={'firstName'}
         placeholder='First Name'
-        aria-invalid={errors.firstName ? 'true' : 'false'}
+        errors={errors}
         register={register}
-        required
+        validationOptions={firstNameValidaitionOptions}
       />
       <Input
         type='text'
@@ -44,7 +50,7 @@ const SignUpForm = () => {
         placeholder='Last Name'
         aria-invalid={errors.lastName ? 'true' : 'false'}
         register={register}
-        required
+        validationOptions={lastNameValidationOptions}
       />
       <Input
         type='email'
@@ -53,7 +59,7 @@ const SignUpForm = () => {
         placeholder='Email'
         aria-invalid={errors.email ? 'true' : 'false'}
         register={register}
-        required
+        validationOptions={emailValidationOptions}
       />
       <Input
         type='password'
@@ -62,7 +68,7 @@ const SignUpForm = () => {
         placeholder='Password'
         aria-invalid={errors.password ? 'true' : 'false'}
         register={register}
-        required
+        validationOptions={passwordValidationOptions}
       />
       <Button>Claim Your Free Trial</Button>
       <Disclaimer>
@@ -110,6 +116,10 @@ const Disclaimer = styled.p`
   }
   a:hover {
     text-decoration: underline;
+  }
+  a:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px var(--box-shadow-color-primary-red);
   }
 `;
 

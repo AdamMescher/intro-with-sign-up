@@ -2,12 +2,11 @@ import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import Input from './Input';
 import { useForm } from 'react-hook-form';
 
-const { register } = useForm();
-
 <Meta
   title='Input'
   component={Input}
   argTypes={{
+    register: useForm.register,
     label: {
       control: { type: 'text' },
     },
@@ -31,11 +30,16 @@ export const Template = (args) => <Input {...args} />;
 
 # Input
 
+## Default
+
 <Canvas>
   <Story
     name='Default'
     args={{
-      placeholder: 'hello',
+      name: 'default',
+      label: 'Default Label',
+      placeholder: 'Default Placeholder',
+      register: useForm.register,
     }}>
     {Template.bind({})}
   </Story>

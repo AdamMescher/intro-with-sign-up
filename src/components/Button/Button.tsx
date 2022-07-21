@@ -22,8 +22,8 @@ const Base = styled.button`
     filter: brightness(0.9) opacity(0.8);
   }
   &:focus-visible {
-    outline: 2px solid var(--color-primary-green);
-    outline-offset: 3px;
+    outline: none;
+    box-shadow: 0 0 0 5px var(--box-shadow-color-primary-green);
   }
 `;
 
