@@ -10,16 +10,12 @@ describe('Input Component', () => {
     const name = 'firstName';
     const label = 'First Name';
     const placeholder = 'First Name';
+    const type = 'text';
     const errors = {
       firstName: false,
     };
     render(
-      <Input
-        label={label}
-        name={name}
-        placeholder={placeholder}
-        errors={errors}
-      />
+      <Input type={type} label={label} name={name} placeholder={placeholder} />
     );
   });
   it('Should render without axe a11y errors', async () => {

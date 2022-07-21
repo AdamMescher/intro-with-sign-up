@@ -31,15 +31,15 @@ const SignUpForm = () => {
     setValue('email', '');
     setValue('password', '');
   });
-  console.log({ signUpFormErrors: errors });
+  console.log({ errors });
   return (
-    <Form onSubmit={onSubmit}>
+    <Form onSubmit={onSubmit} noValidate>
       <Input
-        type='text'
-        label='First Name'
+        type={'text'}
+        label={'First Name'}
         name={'firstName'}
-        placeholder='First Name'
-        errors={errors}
+        placeholder={'First Name'}
+        errors={errors?.firstName}
         register={register}
         validationOptions={firstNameValidaitionOptions}
       />
@@ -118,6 +118,7 @@ const Disclaimer = styled.p`
     text-decoration: underline;
   }
   a:focus-visible {
+    border-radius: 4px;
     outline: none;
     box-shadow: 0 0 0 4px var(--box-shadow-color-primary-red);
   }
