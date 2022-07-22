@@ -39,9 +39,9 @@ const SignUpForm = () => {
         label={'First Name'}
         name={'firstName'}
         placeholder={'First Name'}
-        errors={errors?.firstName}
-        register={register}
+        error={errors?.firstName}
         validationOptions={firstNameValidaitionOptions}
+        register={register}
       />
       <Input
         type='text'
@@ -49,8 +49,9 @@ const SignUpForm = () => {
         name={'lastName'}
         placeholder='Last Name'
         aria-invalid={errors.lastName ? 'true' : 'false'}
-        register={register}
+        error={errors?.lastName}
         validationOptions={lastNameValidationOptions}
+        register={register}
       />
       <Input
         type='email'
@@ -58,8 +59,9 @@ const SignUpForm = () => {
         name={'email'}
         placeholder='Email'
         aria-invalid={errors.email ? 'true' : 'false'}
-        register={register}
+        error={errors?.email}
         validationOptions={emailValidationOptions}
+        register={register}
       />
       <Input
         type='password'
@@ -67,8 +69,9 @@ const SignUpForm = () => {
         name={'password'}
         placeholder='Password'
         aria-invalid={errors.password ? 'true' : 'false'}
-        register={register}
+        error={errors?.password}
         validationOptions={passwordValidationOptions}
+        register={register}
       />
       <Button>Claim Your Free Trial</Button>
       <Disclaimer>

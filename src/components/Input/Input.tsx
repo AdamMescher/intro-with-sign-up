@@ -1,9 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import VisuallyHidden from '../VisuallyHidden';
-
+import { ReactComponent as ErrorIcon } from '../../assets/icon-error.svg';
 interface InputProps {
-  errors?: any;
+  error?: any;
   label: string;
   placeholder: string;
   name: string;
@@ -13,7 +13,7 @@ interface InputProps {
 }
 
 const Input = ({
-  errors,
+  error,
   label,
   placeholder,
   name,
@@ -21,7 +21,6 @@ const Input = ({
   type,
   validationOptions,
 }: InputProps) => {
-  console.log({ withinInputErrors: errors });
   return (
     <Wrapper>
       <VisuallyHidden>
@@ -31,10 +30,15 @@ const Input = ({
         type={type}
         name={name}
         placeholder={placeholder}
+        error={error}
         {...register(name, validationOptions)}
       />
-      {errors && <ErrorIcon></ErrorIcon>}
-      {errors && <ErrorMessage>{errors?.message}</ErrorMessage>}
+      {error && (
+        <ErrorIconWrapper>
+          <ErrorIcon />
+        </ErrorIconWrapper>
+      )}
+      {error && <ErrorMessage>{error?.message}</ErrorMessage>}
     </Wrapper>
   );
 };
@@ -43,30 +47,33 @@ const Wrapper = styled.div`
   position: relative;
 `;
 
-const StyledInput = styled.input`
+const StyledInput = styled.input<{ error: any }>`
   background: transparent;
-  border: 2px solid;
-  border-color: var(--color-neutral-grayish-blue);
+  border: ${({ error}) => (error ? '2px' : '1px')} solid;
+  border-color: ${({ error }) =>
+    error ? 'var(--color-primary-red)' : 'var(--color-neutral-grayish-blue)'};
   border-radius: 8px;
   padding: 20px;
   font-weight: var(--font-weight-medium);
   caret-color: var(--color-accent-blue);
   color: var(--color-neutral-dark-blue);
   ::placeholder {
-    color: var(--color-neutral-dark-blue);
+    color: ${({ error }) =>
+    error ? 'var(--color-primary-red)' : 'var(--color-neutral-grayish-blue)'};
     font-weight: var(--font-weight-semi-bold);
     font-variant: normal;
   }
   &:focus-visible {
-    border-color: var(--color-accent-blue);
+    border-color: ${({ error }) =>
+    error ? 'var(--color-primary-red)' : 'var(--color-neutral-dark-blue)'};
     outline: none;
-    box-shadow: 0 0 0 5px var(--box-shadow-color-accent-blue);
+    box-shadow: 0 0 0 5px ${({ error }) => (error ? 'var(--box-shadow-color-primary-red)' : 'var(--box-shadow-color-accent-blue)')};
   }
 `;
-const ErrorIcon = styled.div`
+const ErrorIconWrapper = styled.div`
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 22px;
+  right: 24px;
 `;
 const ErrorMessage = styled.p`
   margin-top: 4px;

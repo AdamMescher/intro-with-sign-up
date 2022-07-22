@@ -1,5 +1,9 @@
 export const firstNameValidaitionOptions = {
   required: 'First Name cannot be empty',
+  minLength: {
+    value: 2,
+    message: 'First Name must be longer than 2 characters'
+  },
   maxLength: {
     value: 80,
     message: 'First Name must be fewer than 80 characters',
@@ -8,6 +12,10 @@ export const firstNameValidaitionOptions = {
 
 export const lastNameValidationOptions = {
   required: 'Last Name cannot be empty',
+  minLength: {
+    value: 2,
+    message: 'Last Name must be longer than 2 characters'
+  },
   maxLength: {
     value: 80,
     message: 'Last Name must be fewer than 80 characters',
