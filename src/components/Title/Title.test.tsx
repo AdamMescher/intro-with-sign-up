@@ -11,11 +11,7 @@ describe('Title Component', () => {
     expect(screen.getByText(/Title text/i)).toBeInTheDocument();
   });
   it('Should render without axe a11y errors', async () => {
-    render(
-      <Title>
-        <p>Title text</p>
-      </Title>
-    );
-    expect(await axe(screen.getByText(/Title text/i))).toHaveNoViolations();
+    render(<Title>title text</Title>);
+    expect(await axe(screen.getByText(/title text/i))).toHaveNoViolations();
   });
 });

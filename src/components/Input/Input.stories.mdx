@@ -7,6 +7,13 @@ import { useForm } from 'react-hook-form';
   component={Input}
   argTypes={{
     register: useForm.register,
+    type: {
+      control: {
+        type: 'select',
+        options: ['text', 'email', 'password', 'number'],
+      },
+      defaultValue: 'text',
+    },
     label: {
       control: { type: 'text' },
     },
@@ -39,6 +46,7 @@ export const Template = (args) => <Input {...args} />;
       name: 'default',
       label: 'Default Label',
       placeholder: 'Default Placeholder',
+      type: 'text',
       register: useForm.register,
     }}>
     {Template.bind({})}

@@ -15,14 +15,15 @@ describe('Input Component', () => {
       firstName: false,
     };
     render(
-      <Input type={type} label={label} name={name} placeholder={placeholder} />
+      <Input type={type} label={label} name={name} placeholder={placeholder} register={() => {}}/>
     );
   });
   it('Should render without axe a11y errors', async () => {
     const name = 'firstName';
     const label = 'First Name';
     const placeholder = 'First Name';
-    render(<Input label={label} name={name} placeholder={placeholder} />);
+    const type = 'text';
+    render(<Input type={type} label={label} name={name} placeholder={placeholder} register={() => {}} />);
     expect(await axe(screen.getByRole('textbox'))).toHaveNoViolations();
   });
 });
