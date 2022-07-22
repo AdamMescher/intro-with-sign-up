@@ -50,7 +50,7 @@ const Wrapper = styled.main`
   h1 {
     font-weight: var(--font-weight-semi-bold);
   }
-  @media (min-width: 900px) {
+  @media (min-width: 1280px) {
     padding-left: 7.5%;
     padding-right: 7.5%;
     flex-direction: row;
@@ -70,7 +70,9 @@ const Section = styled.section`
   padding-right: 24px;
   margin-left: auto;
   margin-right: auto;
-  @media (min-width: 900px) {
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 1280px) {
     width: 50%;
     display: flex;
     justify-content: center;
@@ -81,15 +83,20 @@ const Section = styled.section`
 const Copy = styled(Section)`
   color: var(--color-neutral-white);
   text-align: center;
-  @media (min-width: 900px) {
+  @media (min-width: 1280px) {
     padding: 0;
     flex-direction: column;
     text-align: left;
-  }
-  h1,
+    h1,
   p {
     max-width: 480px;
     align-self: flex-end;
+  }
+  }
+  h1,
+  p {
+    max-width: 500px;
+    align-self: center;
   }
 `;
 

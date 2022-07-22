@@ -24,6 +24,10 @@ export const lastNameValidationOptions = {
 
 export const emailValidationOptions = {
   required: 'Email cannot be empty',
+  pattern: {
+    value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+    message: "Looks like this is not an email"
+  }
 };
 
 export const passwordValidationOptions = {
